@@ -1,14 +1,42 @@
+const { option } = require("grunt");
+
 module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        less:{
+            development:{
+                files:{
+                    'main.css': 'main.less'
+                }
+            },
+            production:{
+                options: {
+                    compress: true,
+                },
+                files:{
+                    'main.min.css' : 'main.less'
+                }
+
+            }
+        },
+        sass: {
+            dist:{
+                files:{
+                    'main2.css' : 'main.scss'
+                }
+            }
+        }
     })
     // Tarefa 
     grunt.registerTask('olaGrunt', function(){
         const done = this.async();
         setTimeout(function(){
             console.log('Ola grunt')
-        }, 3000)
+        }, 3000);
     })
     // Tarefa default 
-    grunt.registerTask('default', ['olaGrunt']);
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+
+    grunt.registerTask('default', ['less', 'sass']);
 }
