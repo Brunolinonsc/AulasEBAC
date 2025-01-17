@@ -16,31 +16,11 @@ module.exports = function(grunt){
                 }
             }
         },
-        sass: {
-            dist:{
-                options: {
-                    style: 'compressed'
-                },
-                files: {
-                    'main2.css' : 'main.scss'
-                }
-            }
-        },
-        concurrent: {
-            target: ['olaGrunt', 'less', 'sass']
-        }
-    })
-    // Tarefa 
-    grunt.registerTask('olaGrunt', function(){
-        const done = this.async();
-        setTimeout(function(){
-            console.log('Ola grunt')
-        }, 3000)
+
     })
     // Tarefa default 
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-concurrent')
 
     grunt.registerTask('default', ['concurrent']);
+    grunt.registerTask('build', ['concurrent']);
 }
