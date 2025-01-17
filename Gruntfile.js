@@ -1,10 +1,12 @@
+const { task } = require("grunt");
+
 module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         less:{
             development:{
                 files:{
-                    'main.css' : 'main.less'
+                    'dev/styles/main.css' : 'src/styles/main.less'
                 }
             },
             production:{
@@ -12,31 +14,21 @@ module.exports = function(grunt){
                     compress: true,
                 },
                 files: {
-                    'main.min.css': 'main.less'
+                    'dist/styles/main.min.css': 'src/styles/main.less'
                 }
             }
         },
-        sass: {
-            dist: {
-                options: {
-                    style: 'compressed'
-                },
-                files: {
-                    'main2.css' : 'main.scss'
-                }
+        watch:{
+            less: {
+                files:['src/styles/**/*.less'],
+                tasks: ['less:development']
             }
         }
     })
-    // Tarefa 
-    grunt.registerTask('olaGrunt', function(){
-        const done = this.async();
-        setTimeout(function(){
-            console.log('Ola grunt')
-        }, 3000)
-    })
     // Tarefa default 
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['less', 'sass']);
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['less:production']);
 }
