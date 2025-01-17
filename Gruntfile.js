@@ -19,7 +19,7 @@ module.exports = function(grunt){
 
     })
     // Tarefa default 
-    grunt.loadNpmTasks('grunt-contrib-less')
+    grunt.loadNpmTasks('grunt-concurrent'),
 
     grunt.registerTask('default', ['less:development']);
     grunt.registerTask('build', ['less:production']);
