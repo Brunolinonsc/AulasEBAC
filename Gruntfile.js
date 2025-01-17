@@ -1,5 +1,3 @@
-const { task } = require("grunt");
-
 module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -18,17 +16,11 @@ module.exports = function(grunt){
                 }
             }
         },
-        watch:{
-            less: {
-                files:['src/styles/**/*.less'],
-                tasks: ['less:development']
-            }
-        }
+
     })
     // Tarefa default 
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-concurrent'),
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['less:development']);
     grunt.registerTask('build', ['less:production']);
 }
