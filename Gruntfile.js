@@ -17,7 +17,7 @@ module.exports = function(grunt){
             }
         },
         sass: {
-            dist: {
+            dist:{
                 options: {
                     style: 'compressed'
                 },
@@ -25,6 +25,9 @@ module.exports = function(grunt){
                     'main2.css' : 'main.scss'
                 }
             }
+        },
+        concurrent: {
+            target: ['olaGrunt', 'less', 'sass']
         }
     })
     // Tarefa 
@@ -37,6 +40,7 @@ module.exports = function(grunt){
     // Tarefa default 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-concurrent')
 
-    grunt.registerTask('default', ['less', 'sass']);
+    grunt.registerTask('default', ['concurrent']);
 }
