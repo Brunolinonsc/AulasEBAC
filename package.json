@@ -16,6 +16,7 @@
     "grunt-contrib-sass": "^2.0.0"
   },
   "dependencies": {
-    "grunt-contrib-less": "^3.0.0"
+    "grunt-contrib-less": "^3.0.0",
+    "less": "^4.2.1"
   }
 }
