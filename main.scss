@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1{
+    max-width: 640px;
+    width: 100%;
+    margin: 56px auto;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 2%;
+    
+}
+.produtos{
+    max-width: 640px;
+    width: 100%;
+    margin: 56px auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 2%;
+
+
+    .produto{
+        padding: 30px;
+        box-sizing: border-box;
+        border: 1px solid rgb(48, 252, 8);
+        &-imagem{
+            box-shadow: none;
+            margin: 1px;
+            width: 100%;
+        }
+        &-nome{
+            border: 50px;
+            font-size: 1.3em;
+        }
+        &-descricao{
+            color: rgb(17, 0, 255);
+            font-weight: bold;
+        }
+    }
+    .em-destaque{
+        border: 2px solid gold;
+        padding: 30px;
+        background-color: yellow;
+    }
+}
