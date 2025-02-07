@@ -32,4 +32,9 @@
             }
         }
     }
+    @media (max-width:1024px){
+        &__infos{
+            gap: 16px;
+        }
+    }
 }
