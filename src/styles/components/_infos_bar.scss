@@ -2,7 +2,8 @@
     padding: 16px 24px;
     background-color: #fff;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+
 
 
     &__infos{
@@ -24,6 +25,11 @@
         display: block;
         &__infos{
             display: block;
+
+            &__item{
+                margin-bottom: 24px;
+                
+            }
         }
     }
 }
