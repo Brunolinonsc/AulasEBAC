@@ -43,11 +43,21 @@ const pessoa = {
     idade : idade,
     conhecimentos: conhecimentos,
 }
-console.log(typeof nome);
-console.log(typeof idade);
-console.log(typeof eMaiorDeIdade);
-console.log(typeof conhecimentos);
-console.log(typeof pessoa);
 
-console.log(carroBruno2 instanceof Carro)
-console.log(conhecimentos instanceof Array)
+console.log(pessoa.nome)
+console.log(pessoa[nome])
+
+function exibeAtributo(nomeAtributo){
+    console.log(pessoa[nomeAtributo])
+}
+exibeAtributo('nome');
+
+pessoa ['sobrenome'] =  null;
+
+if (pessoa ['sobrenome']){
+console.log('A pessoa tem um sobrenome')
+}
+
+if ('sobrenone' in pessoa){
+    console.log('tem sobrenome')
+}
