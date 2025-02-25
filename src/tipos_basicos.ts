@@ -29,3 +29,6 @@ dadosDaApi = 10;
 dadosDaApi = true;
 dadosDaApi= []
 dadosDaApi = [1,2,3]
+
+//Tipagem
+
