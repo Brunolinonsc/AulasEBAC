@@ -7,5 +7,5 @@ namespace casting {
         console.log(x);
     })
     let nome: string = 35 as unknown as string;
-    nome.
+    
 }
