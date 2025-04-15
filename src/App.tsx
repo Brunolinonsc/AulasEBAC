@@ -1,7 +1,7 @@
-import Botao from './teste'
+import Teste from './teste'
 
 function App() {
-  return <Botao/>
+  return <Teste/>
 }
 
 export default App
