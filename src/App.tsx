@@ -1,7 +1,13 @@
-import Botao from './teste'
+import Teste from './teste'
+import EstileGlobal from './styles'
 
 function App() {
-  return <Botao/>
+  return (
+    <>
+      <EstileGlobal />
+      <Teste />
+    </>
+  )
 }
 
 export default App
