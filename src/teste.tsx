@@ -6,8 +6,8 @@ type BotaoProps = {
 }
 
 const Botao = styled.button<BotaoProps>`
-  background-color: ${(props) => (props.principal ? 'green' : 'blue')};
-  font-size: ${(props) => props.fontSize || '16px'};
+  background-color: ${(props: { principal: any }) => (props.principal ? 'green' : 'blue')};
+  font-size: ${(props: { fontSize: any }) => props.fontSize || '16px'};
 `
 
 const BotaoPerigo = styled(Botao)`
