@@ -1,8 +1,8 @@
-import Titulo from '../components/Titulo'
+import Titulo from '../../components/Titulo'
 
 const Sobre = () => (
   <section>
-    <Titulo>Sobre</Titulo>
+    <Titulo fontSize={16}>Sobre min</Titulo>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. A necessitatibus,
       laborum veniam asperiores eveniet reiciendis accusantium tempore, dolores
