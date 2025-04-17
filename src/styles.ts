@@ -5,6 +5,7 @@ const EstileGlobal = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
+    list-style: none;
 }
     body{
         padding-top: 80px;
@@ -20,6 +21,7 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   display: grid;
+  margin-bottom: 24px;
   grid-template-columns: 128px auto;
   column-gap: 56px;
   @media (max-width: 768px) {
