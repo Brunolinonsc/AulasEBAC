@@ -5,6 +5,11 @@ type TagProps = {
   prioridade?: string
   status?: string
 }
+
+enum DiasDaSemana {
+  DOMINGO
+}
+
 function retornaCorDefundo(props: TagProps): string {
   if ('status' in props) {
     if (props.status === 'pendente') return Variaveis.amarelo
