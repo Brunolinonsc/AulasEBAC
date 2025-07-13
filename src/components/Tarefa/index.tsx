@@ -1,16 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import * as S from './style'
 import * as enums from '../../utils/enums/Tarefa'
-import { remover } from '../../store/reducers/tarefas'
+import { remover, editar } from '../../store/reducers/tarefas'
 import TarefaClass from '../../models/Tarefa'
 
 type Props = TarefaClass
 
-const Tarefa = ({ descricao, prioridade, status, titulo, id }: Props) => {
+const Tarefa = ({
+  descricao: descricaoOriginal,
+  prioridade,
+  status,
+  titulo,
+  id
+}: Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
+  const [descricao, setDescricao] = useState('')
+
+  useEffect(() => {
+    if (descricaoOriginal.length > 0) {
+      setDescricao(descricaoOriginal)
+    }
+  }, [descricaoOriginal])
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setDescricao(descricaoOriginal)
+  }
   return (
     <S.Card>
       <S.Titulo>{titulo}</S.Titulo>
@@ -20,14 +37,23 @@ const Tarefa = ({ descricao, prioridade, status, titulo, id }: Props) => {
       <S.Tag parametro="status" status={status}>
         {status}
       </S.Tag>
-      <S.Descricao value={descricao} />
+      <S.Descricao
+        disabled={!estaEditando}
+        value={descricao}
+        onChange={(evento) => setDescricao(evento.target.value)}
+      />
       <S.BarraAcoes>
         {estaEditando ? (
           <>
-            <S.BotaãoSalvar>Salvar</S.BotaãoSalvar>
-            <S.BotaoRemover onClick={() => setEstaEditando(false)}>
-              Cancelar
-            </S.BotaoRemover>
+            <S.BotaãoSalvar
+              onClick={() => {
+                dispatch(editar({ descricao, prioridade, status, titulo, id }))
+                setEstaEditando(false)
+              }}
+            >
+              Salvar
+            </S.BotaãoSalvar>
+            <S.BotaoRemover onClick={cancelarEdicao}>Cancelar</S.BotaoRemover>
           </>
         ) : (
           <>
