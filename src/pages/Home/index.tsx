@@ -1,11 +1,13 @@
+import BotaoAdicionar from '../../components/BotaoAdicionar'
 import BarraLateral from '../../containers/BarraLateral'
 import ListaDeTarefas from '../../containers/ListaDeTarefas'
 
 const Home = () => (
-  <div>
+  <>
     <BarraLateral />
     <ListaDeTarefas />
-  </div>
+    <BotaoAdicionar />
+  </>
 )
 
 export default Home
