@@ -29,4 +29,4 @@ describe('Testes para a pagina de candidatura' , () => {
         })
         cy.screenshot('tela-incrição-preenchido')
     })
-})
+}) 
