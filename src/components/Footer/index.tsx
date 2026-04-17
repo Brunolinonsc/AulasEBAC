@@ -1,44 +1,53 @@
-import { Link } from 'react-router-dom'
+import { Container, FooterSection, Link, Links, SectionTitle } from './styles'
 
-import logo from '../../assets/efood-logo.png'
-import instagram from '../../assets/instagram.png'
-import facebook from '../../assets/facebook.png'
-import twitter from '../../assets/twitter.png'
-
-import * as S from './style'
+const currentYear = new Date().getFullYear()
 
 const Footer = () => (
-  <S.FooterContainer>
+  <Container>
     <div className="container">
-      <Link title="eFood | Clique para ir à página inicial" to="/">
-        <img src={logo} alt="Logo eFood" />
-      </Link>
-      <S.ListContainer>
-        <li>
-          <a href="">
-            <img src={instagram} alt="ícone Instagram" />
-          </a>
-        </li>
-
-        <li>
-          <a href="">
-            <img src={facebook} alt="ícone Facebook" />
-          </a>
-        </li>
-
-        <li>
-          <a href="">
-            <img src={twitter} alt="ícone Twitter" />
-          </a>
-        </li>
-      </S.ListContainer>
-      <p>
-        A efood é uma plataforma para divulgação de estabelecimentos, a
-        responsabilidade pela entrega, qualidade dos produtos é toda do
-        estabelecimento contratado.
-      </p>
+      <FooterSection>
+        <SectionTitle>Categorias</SectionTitle>
+        <Links>
+          <li>
+            <Link>RPG</Link>
+          </li>
+          <li>
+            <Link>Ação</Link>
+          </li>
+          <li>
+            <Link>Aventura</Link>
+          </li>
+          <li>
+            <Link>Esportes</Link>
+          </li>
+          <li>
+            <Link>Simulação</Link>
+          </li>
+          <li>
+            <Link>Estratégia</Link>
+          </li>
+          <li>
+            <Link>FPS</Link>
+          </li>
+        </Links>
+      </FooterSection>
+      <FooterSection>
+        <SectionTitle>Acesso rápido</SectionTitle>
+        <Links>
+          <li>
+            <Link>Novidades</Link>
+          </li>
+          <li>
+            <Link>Promoções</Link>
+          </li>
+          <li>
+            <Link>Em breve</Link>
+          </li>
+        </Links>
+      </FooterSection>
+      <p>{currentYear} - &copy; E-PLAY Todos os direitos reservados</p>
     </div>
-  </S.FooterContainer>
+  </Container>
 )
 
 export default Footer
