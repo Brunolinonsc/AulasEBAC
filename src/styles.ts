@@ -28,4 +28,10 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+  fundo {
+    background-image: url('../../assets/images/fundo.png');
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+  }
 `
